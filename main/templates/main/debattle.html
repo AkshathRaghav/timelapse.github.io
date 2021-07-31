@@ -1,0 +1,66 @@
+{% extends 'main/base.html' %}
+{% load static %}
+{% block image1 %}
+        <img alt="background" src= "{% static 'main/img/bait.png' %}"/>
+{% endblock %} 
+
+{% block infotext %}
+<section class="text-center" style="background-color: whitesmoke;">
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8 col-lg-6">
+            <h1 class="type--uppercase">
+                <em>
+                    <strong>This is the thing about gaming
+                        <br class="hidden-sm hidden-xs" />some tagline dalo </strong>
+                </em>
+            </h1>
+            <p class="lead">
+                We are something about something/ add some shit here/ if you need more divs copy paste this section ra
+            </p>
+        </div>
+    </div>
+    <!--end of row-->
+</div>
+</section>
+
+<!--end of container-->
+{% endblock %}
+
+{% block check2ndimage %}
+            <section class="cover height-100 imagebg">
+                <div class="background-image-holder">
+                    <img alt="background" src="{% static 'main/img/bait.png'%}" />
+                </div>
+            </section>
+{% endblock %}
+{% block checkregister %}
+          <section class="text-center imagebg" data-gradient-bg="#4876BD,#5448BD,#8F48BD,#BD48B1">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8 col-lg-6">
+                        <div class="cta">
+                            <h2 class="h1 type--uppercase">
+                                <em>
+                                    <strong>Come register for an event 
+                                        <br class="hidden-sm hidden-xs"> (&hellip;or two)</strong>
+                                </em>
+                            </h2>
+                            <p class="lead">
+                                First create an account or login if you aldready do have one. Then, Register duh
+                            </p>
+                            <a class="btn btn--primary type--uppercase" href="#">
+                                <span class="btn__text">
+                                    Register 
+                                </span>
+                              
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!--end of row-->
+            </div>
+            <!--end of container-->
+         </section>
+{% endblock %}

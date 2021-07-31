@@ -1,0 +1,86 @@
+{% extends 'main/base.html' %}
+{% load static %}
+{% block image1 %}
+        <img alt="background" src= "{% static 'main/img/art.png' %}"/>
+{% endblock %} 
+
+{% block infotext %}
+<section class="text-center bg--light">
+
+    <div class="container"  >
+
+        <div class="row justify-content-center">
+            <h1> 
+            <strong style="font-family: 'Girassol', cursive; font-size: 6rem ;"> Meraki </strong>
+        </h1>
+
+        <div class="row justify-content-center">
+            <div class="jumbotron jumbotron-fluid">
+
+                <div class = " mb-4" style="height: 4px; background-color: black"></div>
+                <blockquote class="blockquote mb-10" style="font-family: 'Girassol', cursive; font-size: 3rem ;">
+
+                    <p class="mb-4" > A piece of music is nothing without the act of interpretation. Everyone deciphers melodies in
+                        innumerable ways.                        
+                        
+                        </p>
+   
+    
+                  </blockquote>
+                <h4  style="font-family: 'Girassol', cursive; font-size: 2rem ;">
+                    Let the chords we hear turn to beautiful epiphanies on paper.
+                    <br>
+                    <br>
+                    Transform aesthetically pleasing tunes to vibrant hues!
+                    
+                    </h4>
+             
+              </div>
+        
+                
+                    
+        
+        </div>
+        <!--end of row-->
+    </div>
+</section>
+
+<!--end of container-->
+{% endblock %}
+
+{% block check2ndimage %}
+            <section class="cover height-100 imagebg">
+                <div class="background-image-holder">
+                    <img alt="background" src="{% static 'main/img/_MERAKI.png'%}" />
+                </div>
+            </section>
+{% endblock %}
+{% block checkregister %}
+          <section class="text-center imagebg" data-gradient-bg="#4876BD,#5448BD,#8F48BD,#BD48B1">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8 col-lg-6">
+                        <div class="cta">
+                            <h2 class="h1 type--uppercase">
+                                <em>
+                                    <strong>Come register for an event 
+                                        <br class="hidden-sm hidden-xs"> (&hellip;or two)</strong>
+                                </em>
+                            </h2>
+                            <p class="lead">
+                                First create an account or login if you aldready do have one. Then, Register duh
+                            </p>
+                            <a class="btn btn--primary type--uppercase" href="#">
+                                <span class="btn__text">
+                                    Register 
+                                </span>
+                              
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!--end of row-->
+            </div>
+            <!--end of container-->
+         </section>
+{% endblock %}
