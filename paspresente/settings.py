@@ -149,4 +149,4 @@ EMAIL_HOST_PASSWORD = 'ceogmslvznevkyiv' #past the key or password app here
 # DEFAULT_FROM_EMAIL = 'default from email' ceogmslvznevkyiv
 
 # https://warehouse.python.org/project/whitenoise/
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.StaticFilesStorage'
