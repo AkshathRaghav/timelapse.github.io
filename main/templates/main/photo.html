@@ -1,0 +1,90 @@
+{% extends 'main/base.html' %}
+{% load static %}
+{% block image1 %}
+        <img alt="background" src= "{% static 'main/img/photography.png' %}"/>
+{% endblock %} 
+
+{% block infotext %}
+
+<section class="text-center bg--dark " >
+    <!-- style="background-image: url(https://cdn.discordapp.com/attachments/812010489248088088/838058154024763392/fashiontext.jpeg); background-size: cover   ;" -->
+
+    <div class="container"  >
+
+        <div class="row justify-content-center">
+                <h1  >
+                
+                    <strong style="font-family: 'Arvo', serif; font-size: 6rem ;"> Candid Capture </strong>
+                </h1>
+                <div class="row justify-content-center">
+                    <div class="jumbotron jumbotron-fluid">
+                        
+                        <div class = " mb-4" style="height: 4px; background-color: #EAEFF5"></div>
+                        <blockquote class="blockquote mb-10" style="font-family: 'Girassol', cursive; font-size: 3rem ;">
+                            <p class="mb-4" > A classic event to portray the world through the lens – Clickbait
+                                
+                                
+                            
+                                </p>
+           
+            
+                          </blockquote>
+                        <div class = " mb-4" style="height: 4px; background-color: #EAEFF5"></div>
+
+                        <h4  style="font-family: 'Arvo', serif; font-size: 2rem ;">
+                            The participants will be given an ordinary theme and they will have to creatively make it
+                                 ~ extraordinary ~
+                            
+                            </h4>
+                     
+                      </div>
+                
+                    
+        
+            <!-- </div> -->
+        </div>
+        <!--end of row-->
+    </div>
+    <!--end of container-->
+</section>
+
+
+<!--end of container-->
+{% endblock %}
+
+{% block check2ndimage %}
+            <section class="cover height-100 imagebg">
+                <div class="background-image-holder">
+                    <img alt="background" src="{% static 'main/img/cuberules.png'%}" />
+                </div>
+            </section>
+{% endblock %}
+{% block checkregister %}
+          <section class="text-center imagebg" data-gradient-bg="#4876BD,#5448BD,#8F48BD,#BD48B1">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8 col-lg-6">
+                        <div class="cta">
+                            <h2 class="h1 type--uppercase">
+                                <em>
+                                    <strong>Come register for an event 
+                                        <br class="hidden-sm hidden-xs"> (&hellip;or two)</strong>
+                                </em>
+                            </h2>
+                            <p class="lead">
+                                First create an account or login if you aldready do have one. Then, Register duh
+                            </p>
+                            <a class="btn btn--primary type--uppercase" href="#">
+                                <span class="btn__text">
+                                    Register 
+                                </span>
+                              
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!--end of row-->
+            </div>
+            <!--end of container-->
+         </section>
+{% endblock %}
