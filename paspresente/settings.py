@@ -26,7 +26,7 @@ SECRET_KEY = '#=$mgzgw2)7xng!)ip&h6$u3849)4-$na(157-bq%eyqw9d=s6'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['127.0.0.1', 'https://timelapse21.herokuapp.com/']
+ALLOWED_HOSTS = ['127.0.0.1', 'timelapse21.herokuapp.com/']
 
 # Application definition
 
