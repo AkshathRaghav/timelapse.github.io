@@ -1,0 +1,108 @@
+{% extends 'main/base.html' %}
+{% load static %}
+
+{% block image1 %}
+        <img alt="background" src= "{% static 'main/img/bg.png' %}"/>
+{% endblock %} 
+
+{% block text %}
+    <h1 class="h1--large text-center type--uppercase">
+
+        <h3 class = " type--uppercase">
+            <em>
+                <strong style="font-family: Verdana, Geneva, Tahoma, sans-serif; font-size: 15rem;">Profile</strong>
+            </em>
+            <br>    
+        </h3> 
+        <p class = " type--uppercase" style="font-family: Verdana, Geneva, Tahoma, sans-serif; font-size: 2rem;">username : {{username}}</p>
+
+    </h1>
+{% endblock  %}
+
+{% block infotext %}
+
+<div class="container bg--white">
+    <div class="row justify-content-between ">
+        <div class="col-md-8 col-lg-6" style="font-family: Verdana, Geneva, Tahoma, sans-serif; font-size: larger;">
+            <br>
+            {% if user.is_authenticated %}
+                <dl class="row">
+                <dt class="col-sm-3">Discord_ID</dt>
+                <dd class="col-sm-9">{{username}}</dd>
+
+                <dt class="col-sm-3">Email </dt>
+                <dd class="col-sm-9">{{email}}</dd>
+
+                <dt class="col-sm-3">First Name</dt>
+                <dd class="col-sm-9"> {{user.first_name}}</dd>
+                
+                <dt class="col-sm-3">Last Name</dt>
+                <dd class="col-sm-9"> {{user.last_name}}</dd>
+                
+              
+                {% if userschosenevent %}
+                <dt class="col-sm-3">Code</dt>
+                <dd class="col-sm-9">{{userschosenevent.code}}</dd>
+
+                <dt class="col-sm-3">Number</dt>
+                <dd class="col-sm-9">{{userschosenevent.number}}</dd>
+
+                <dt class="col-sm-3">School</dt>
+                <dd class="col-sm-9">{{userschosenevent.schoolname}}</dd>
+
+                <dt class="col-sm-3"> Grade</dt>
+                <dd class="col-sm-9">  {{userschosenevent.grade}}</dd>
+                
+                <dt class="col-sm-3">Section</dt>
+                <dd class="col-sm-9">  {{userschosenevent.section}}</dd>
+     
+                <dt class="col-sm-3"> Event1</dt>
+                <dd class="col-sm-9"> {{userschosenevent.e1}}</dd>
+                
+                <dt class="col-sm-3">Event2 </dt>
+                <dd class="col-sm-9">  {{userschosenevent.e2}}</dd>
+                <dt class="col-sm-3">Event3</dt>
+                <dd class="col-sm-9">  {{userschosenevent.e3}}</dd>
+                {% endif %}
+                </dl>
+
+            {% else %}
+                <h3 class="type--uppercase">
+                    <p>Login First to view the Profile</p>
+                </h3> 
+            {% endif %}
+        </div>
+    </div>
+    <!--end of row-->
+</div>
+<!--end of container-->
+{% endblock %}
+{% block events %}
+{% if userschosenevent %}
+{% else %}
+<div class="container bg--dark">
+    <div class="row justify-content-center ">
+        <div class="col-md-8 col-lg-6">
+            <br>
+            <h3 class="type--uppercase text-center">
+                <p>Go register for an event!</p>
+                <a  href='/users/registerforevent/'><button type="submit" class="btn btn--primary">Register for Event</button></a>
+
+            </h3>
+                
+        </div>
+    </div>
+    <!--end of row-->
+</div>
+{% endif %}
+{% endblock  %}
+
+
+{% block checkregister %}
+<br>
+<a  href='/users/logout/'><button type="submit" class="btn btn--primary">Logout</button></a>
+
+{% endblock %}
+
+
+

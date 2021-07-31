@@ -1,0 +1,128 @@
+{% extends 'main/base.html' %}
+{% load static %}
+
+{% block image1 %}
+        <img alt="background" src= "{% static 'main/img/bg.png' %}"/>
+{% endblock %} 
+
+{% block text %}
+<h1 class="h1--large text-center type--uppercase">
+
+    <h3 class = " type--uppercase">
+        <em>
+            <strong style="font-family: Verdana, Geneva, Tahoma, sans-serif; font-size: 15rem;">Login</strong>
+        </em>
+        <br>    
+    </h3> 
+</h1>
+{% endblock  %}
+
+{% block infotext %}
+{% if not user.is_authenticated %}
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8 col-lg-6">
+            <h1 class="type--uppercase">
+                <em>
+                    
+                </em>
+            </h1>
+            
+        </div>
+    </div>
+</div>
+{% endif %}
+{% endblock %}
+
+
+{% block events %}
+{% if user.is_authenticated %}
+<div class="tab__content">
+    <section class="switchable bg--dark">
+        <div class="container">
+            <div class="row justify-content-between align-items-center">
+                <div class="col-md-6 col-lg-5">
+                    <div class="switchable__text">
+                        <h2>Go to Profile!</h2> 
+                            
+                    </div>
+                    <a  href='/users/profile/'><button type="button" class="btn btn--primary">Go</button></a>
+
+                </div>
+                <div class="col-md-6 col-lg-5">
+                    <img alt="Image" class="border--round box-shadow-shallow" src= "{% static 'main/img/formwalapic.jfif' %}" />
+                </div>
+            </div>
+            <!--end of row-->
+        </div>
+        <!--end of container-->
+    </section>
+    
+</div>
+{% else %}
+
+<div class="tab__content">
+    {% if erroristhere %}
+    <section class="switchable bg-danger">
+    {% else %}
+    <section class="switchable bg--dark">
+    {% endif %}
+        <div class="container">
+            <div class="row justify-content-between align-items-center">
+                <div class="col-md-6 col-lg-5">
+                    <div class="switchable__text">
+                            <hr class="short">
+
+                            <a class= "text-warning " href='/users/register/' style="font-family: Verdana, Geneva, Tahoma, sans-serif; font-size: large;">Create Account</a>
+                        </span>
+                        <hr class="short">
+                        {% if erroristhere %} 
+                            <a class="bg--warning text-warning" style="font-family: Verdana, Geneva, Tahoma, sans-serif; font-size: medium; ">Incorrect username or password</a>
+                            <hr class="short">
+
+                        {% endif %}
+
+                        <form method="POST">
+                            {% csrf_token %}
+                            <div class="row">
+                               
+                                <div class="col-12">
+                                    <input type="text" name="username" placeholder="Discord_ID"><hr>
+
+                                </div>
+                           
+                                <div class="col-12">
+                                    <input type="password" name="password" placeholder="Password"><hr>
+                                </div>
+                               
+                                
+                                <div class="col-12">
+                                    <button type="submit" class="btn btn--primary">Login</button>
+                                </div>
+                                <hr />
+                                
+                            </div>
+                            <!--end row-->
+                        </form>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-5">
+                    {% if erroristhere %}
+                    <img alt="Image" class="border--round box-shadow-shallow" src= "{% static 'main/img/stop.jpg' %}" />
+                    {% else %}
+                    <img alt="Image" class="border--round box-shadow-shallow" src= "{% static 'main/img/formwalapic.jfif' %}" />
+                    {% endif %}
+
+                </div>
+            </div>
+            <!--end of row-->
+        </div>
+        <!--end of container-->
+    </section>
+</div>
+
+
+{% endif %}
+    
+{% endblock  %}
+

@@ -1,0 +1,140 @@
+{% extends 'main/base.html' %}
+{% load static %}
+{% block image1 %}
+        <img alt="background" src= "{% static 'main/img/bg.png' %}"/>
+{% endblock %} 
+{% block text %}
+<h1 class="h1--large text-center type--uppercase">
+
+    <h3 class = " type--uppercase">
+        <em>
+            <strong style="font-family: Verdana, Geneva, Tahoma, sans-serif; font-size: 6rem;">Event Registration</strong>
+        </em>
+        <br>    
+    </h3> 
+    <p class = " type--uppercase" style="font-family: Verdana, Geneva, Tahoma, sans-serif; font-size: 2rem;">username : {{username}}</p>
+
+</h1>
+{% endblock  %}
+
+
+{% block infotext %}
+
+
+<div class="tab__content">
+    <section class="switchable bg--dark">
+        <div class="container">
+
+            <div class="row justify-content-between align-items-center">
+                {% if user.is_authenticated %}
+                <div class="col-md-6 col-lg-5">
+
+                    <div class="switchable__text">
+
+                        {% if not userchosenevent %}
+                        
+                        <form method="POST">
+                            {% csrf_token %}
+                            <div class="row">
+                               
+                                
+                                <div class="col-12">
+                                    <input type="number" name="number" placeholder="Number"required><hr>
+                                </div>
+                                <div class="col-12">
+                                    <input type="text" name="schoolname" placeholder="School Name ( full form ) " required><hr>
+                                </div>
+                                <div class="col-12">
+                                    <input type="number" name="grade" placeholder="Grade"required><hr>
+                                </div>
+                                <div class="col-12">
+                                    <input type="text" name="section" placeholder="Section"required><hr>
+                                </div>
+
+                                <div class="col-12">
+                                    <select class="form-control" type = "text" name ="event1" aria-placeholder="Enter Event 1" required>
+                                      <option>Gaming</option>
+                                      <option>Cubing</option>
+                                      <option>3</option>
+                                      <option>4</option>
+                                      <option>5</option>
+                                    </select>
+                                </div>
+                                <hr>
+
+                                <div class="form-group col-12">
+                                    <select class="form-control" type = "text" name ="event1" aria-placeholder="Enter Event 1" required>
+                                      <option>Gaming</option>
+                                      <option>Cubing</option>
+                                      <option>3</option>
+                                      <option>4</option>
+                                      <option>5</option>
+                                    </select>
+                                </div>
+                                <hr>
+
+                                <div class="form-group col-12">
+                                    <select class="form-control" type = "text" name ="event1" aria-placeholder="Enter Event 1" required>
+                                      <option>Gaming</option>
+                                      <option>Cubing</option>
+                                      <option>3</option>
+                                      <option>4</option>
+                                      <option>5</option>
+                                    </select>
+                                </div>
+                                <hr>
+                            
+                               <br>
+                               <br>
+                                
+                                
+                               
+                                
+                                <div class="col-12">
+                                    <hr >
+                                    <a  href='/users/registerforevent/'><button type="submit" class="btn btn--primary" style="font-size: medium; font-family: Verdana, Geneva, Tahoma, sans-serif;">Register</button></a>
+
+                                </div>
+                                <hr />
+                                
+                            </div>
+                            <!--end row-->
+                        </form>
+                        {% else %}
+                        <h3>You have aldready registered</h3>
+                        {% endif %}
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-5">
+                    <img alt="Image" class="border--round box-shadow-shallow" src="{% static 'main/img/2ndformwalapic.jpg' %}" />
+                </div>
+            </div>
+            {% else %}
+            <h3 class="type--uppercase">
+                <p>Sorry you need to login first</p>
+                <a  href='/users/login/'><button type="submit" class="btn btn--primary">Login</button></a>
+            </h3> 
+            
+            {% endif %}
+            <!--end of row-->
+        </div>
+        <!--end of container-->
+    </section>
+</div>
+
+{% endblock %}
+{% block events %}
+{% if user.is_authenticated %}
+    <a  href='/users/logout/'><button type="submit" class="btn btn--primary">Logout</button></a>
+{% else %}
+    <a  href='/users/login/'><button type="submit" class="btn btn--primary">Login</button></a>
+{% endif %}
+{% endblock  %}
+
+
+{% block checkregister %}
+
+{% endblock %}
+
+
+

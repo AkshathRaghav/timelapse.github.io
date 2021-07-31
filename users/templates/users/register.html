@@ -1,0 +1,94 @@
+{% extends 'main/base.html' %}
+{% load static %}
+
+{% block image1 %}
+        <img alt="background" src= "{% static 'main/img/bg.png' %}"/>
+{% endblock %} 
+{% block text %}
+<h1 class="h1--large text-center type--uppercase">
+
+    <h3 class = " type--uppercase">
+        <em>
+            <strong style="font-family: Verdana, Geneva, Tahoma, sans-serif; font-size: 15rem;">Register</strong>
+        </em>
+        <br>    
+    </h3> 
+
+
+</h1>
+{% endblock  %}
+
+{% block events %}
+
+<div class="tab__content">
+    <section class="switchable bg--dark">
+        <div class="container">
+            <div class="row justify-content-between align-items-center">
+
+                <div class="col-md-6 col-lg-5">
+
+                    <div class="switchable__text">
+                    {% if not user.is_authenticated %}
+
+                        <h2>Create an account</h2>
+                        <span>Already have an account?
+                            <a href='/users/login/'>Sign In</a>
+                        </span>
+                        <hr class="short">
+                        <form method="POST">
+                            {% csrf_token %}
+                            <div class="row">
+                                <div class="col-12">
+                                    <input type="text" name="first_name" placeholder="First Name"><hr>
+
+                                </div>
+                                <div class="col-12">
+                                    <input type="text" name="last_name" placeholder="Last Name"><hr>
+
+                                </div>
+                                <div class="col-12">
+                                    <input type="text" name="username" placeholder="Discord_ID"><hr>
+
+                                </div>
+                                <div class="col-12">
+                                    <input type="email" name="email" placeholder="Email"><hr>
+
+                                </div>
+                                <div class="col-12">
+                                    <input type="password" name="password1" placeholder="Password"><hr>
+                                </div>
+                                <div class="col-12">
+                                    <input type="password" name="password2" placeholder="Confirm Password">
+                                </div>
+                                
+                                <div class="col-12">
+                                    <button type="submit" class="btn btn--primary">Register</button>
+                                </div>
+                                <hr />
+                               
+                            </div>
+                            <!--end row-->
+                        </form>
+                    {% else %} 
+                    <h2>You have aldready made an account!</h2>
+                    <h3>Log out and create another account if you wish to</h3>
+                    {% endif %} 
+
+                    </div>
+
+                </div>
+
+                <div class="col-md-6 col-lg-5">
+                    <img alt="Image" class="border--round box-shadow-shallow" src="img/landing-7.png" />
+                </div>
+            </div>
+            <!--end of row-->
+        </div>
+        <!--end of container-->
+    </section>
+</div>
+
+
+    
+{% endblock  %}
+
